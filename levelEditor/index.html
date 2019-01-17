@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Arkanoid: Doh It Again level editor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+
+		#editor {
+			display: grid;
+			grid-template-columns: repeat(10, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+			width: 100%;
+			flex: 1;
+		}
+
+		div[data-brick]{ border: 1px solid #555; }
+		div[data-brick="white"] { background: white; }
+		div[data-brick="orange"] { background: orange; }
+		div[data-brick="cyan"] { background: cyan; }
+		div[data-brick="green"] { background: green; }
+		div[data-brick="red"] { background: red; }
+		div[data-brick="blue"] { background: blue; }
+		div[data-brick="pink"] { background: pink;}
+
+		div[data-brick="whiteP"] { background: white; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="orangeP"] { background: orange; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="cyanP"] { background: cyan; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="greenP"] { background: green; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="redP"] { background: red; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="blueP"] { background: blue; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+		div[data-brick="pinkP"] { background: pink; box-shadow: 0px 0px 5px 5px rgba(255,255,255,.5) inset; }
+
+		div[data-brick="gold"] { background: gold; }
+		div[data-brick="silver"] { background: silver; }
+		div[data-brick="empty"] { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAD0lEQVQImWNgQAX/yeAAAIHCA/0RE2WAAAAAAElFTkSuQmCC) repeat; }
+	</style>
+</head>
+<body>
+	<div>
+		<select name="brick" id="brickSelector">
+			<optgroup label="Normal">
+				<option value="white">White</option>
+				<option value="orange">Orange</option>
+				<option value="cyan">Cyan</option>
+				<option value="green">Green</option>
+				<option value="red">Red</option>
+				<option value="blue">Blue</option>
+				<option value="pink">Pink</option>
+			</optgroup>
+			<optgroup label="With powerups">
+				<option value="whiteP">White</option>
+				<option value="orangeP">Orange</option>
+				<option value="cyanP">Cyan</option>
+				<option value="greenP">Green</option>
+				<option value="redP">Red</option>
+				<option value="blueP">Blue</option>
+				<option value="pinkP">Pink</option>
+			</optgroup>
+			<optgroup label="Specials">
+				<option value="gold">Gold</option>
+				<option value="silver">Silver</option>
+				<option value="empty">Empty</option>
+			</optgroup>
+		</select>
+		<button>Save</button>
+	</div>
+	<div id="editor">
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+		<div data-brick="empty"></div>
+	</div>
+	<script>
+		let $selector = document.querySelector("select");
+		let $save = document.querySelector("button");
+
+		document.body.addEventListener('click', function(e){
+			if( !e.target.dataset.hasOwnProperty('brick') ){ return; }
+			e.target.dataset.brick = $selector.value;
+		});
+
+		$save.addEventListener('click', saveMap);
+
+		function saveMap(){
+			// Helper function to make a new brick
+			function makeBrick({
+				color = 'white',
+				power = false,
+				type = 'normal'
+			} = {}){
+
+				const COLORS = {
+					white : 0b0000,
+					orange :  0b0001,
+					cyan :  0b0010,
+					green :  0b0011,
+					red :  0b0100,
+					blue :  0b0101,
+					pink :  0b0110,
+					gold :  0b0111
+				};
+
+				const TYPES = {
+					empty : 0b0000,
+					normal : 0b0001,
+					silver : 0b0010,
+					gold : 0b0011,
+				}
+
+				return (TYPES[type] << 4) | COLORS[color] | (power << 3);
+			}
+
+			// Helper function to parse a file
+			function readMap( string ){
+				let lexer = {
+					white : makeBrick({ color : 'white' }),
+					orange : makeBrick({ color : 'orange' }),
+					cyan : makeBrick({ color : 'cyan' }),
+					green : makeBrick({ color : 'green' }),
+					red : makeBrick({ color : 'red' }),
+					blue : makeBrick({ color : 'blue' }),
+					pink : makeBrick({ color : 'pink' }),
+
+					whiteP : makeBrick({ color : 'white', power : true }),
+					orangeP : makeBrick({ color : 'orange', power : true }),
+					cyanP : makeBrick({ color : 'cyan', power : true }),
+					greenP : makeBrick({ color : 'green', power : true }),
+					redP : makeBrick({ color : 'red', power : true }),
+					blueP : makeBrick({ color : 'blue', power : true }),
+					pinkP : makeBrick({ color : 'pink', power : true }),
+
+					gold : makeBrick({ type : 'gold' }),
+					silver : makeBrick({ type : 'silver' }),
+					empty : makeBrick({ type : 'empty' })
+				};
+
+				let map = [];
+				let data = Array.from(document.querySelectorAll('[data-brick]')).map(function(item){ return item.dataset.brick; });
+				for( let i = 0; i < data.length; i++ ){
+					if( lexer.hasOwnProperty( data[i] ) ){
+						map.push( lexer[ data[i] ] );
+					}
+				}
+
+				return map;
+			}
+
+			// Create a new buffer with the needed size
+			const Buffer = new ArrayBuffer(
+				5 + // magic number
+				3 + // EOF
+				3 + // offset
+				2 + // payload length
+				100 // payload
+			);
+			const PatchBuffer = new Uint8Array( Buffer );
+			const BufferDataView = new DataView( Buffer );
+
+			// Write the magic number
+			PatchBuffer.set([0x50, 0x41, 0x54, 0x43, 0x48]);
+
+			// Write the offset where to write
+			const LvlAddress = 0x07000a;
+			PatchBuffer[5] = LvlAddress >> 16;
+			PatchBuffer[6] = LvlAddress << 16 >> 24;
+			PatchBuffer[7] = LvlAddress << 24 >> 24;
+
+			// Write the payload, and the payload length
+			const Payload = readMap('map.txt');
+			const PayloadLength = 100;
+			BufferDataView.setUint16(8, PayloadLength );
+
+			let offset = 10;
+			for( let i = 0; i < Payload.length; i++ ){
+				BufferDataView.setUint8( offset, Payload[i] );
+				offset++;
+			}
+
+			// Write the EOF
+			PatchBuffer.set([0x45,0x4f,0x46], offset);
+
+			// Write file
+			let file = new Blob([Buffer]);
+			let url = URL.createObjectURL( file );
+			let a = document.createElement("a");
+			a.download = "patch.ips";
+			a.href = url;
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+		}
+	</script>
+</body>
+</html>

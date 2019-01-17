@@ -1,0 +1,10 @@
+empty empty red red empty red red empty empty empty
+empty red empty empty red empty empty red empty empty
+red empty empty empty empty whiteP empty empty red empty
+red empty empty empty empty empty empty empty red empty
+empty red empty empty empty empty empty red empty empty
+empty empty red empty empty empty red empty empty empty
+empty empty empty red empty red empty empty empty empty
+empty empty empty empty red empty empty empty empty empty
+empty empty empty empty empty empty empty empty empty empty
+empty empty empty empty empty empty empty empty empty empty
